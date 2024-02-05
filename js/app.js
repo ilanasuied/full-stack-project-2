@@ -13,5 +13,6 @@ function onoutImage(){
     game1.src = initialSrc;
 }
 
+//call the function when the mouse is over/out the image
 game1.addEventListener("mouseover", onOverImage)
 game1.addEventListener("mouseout", onoutImage)
