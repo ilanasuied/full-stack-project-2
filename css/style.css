@@ -1,17 +1,30 @@
 *{
     font-family: 'Happy Monkey', system-ui;
-    font-family: 'Orbitron', sans-serif;
-    font-family: 'Protest Riot', sans-serif;
-    font-family: 'Rubik', sans-serif;
     margin: 0;
     padding: 0;
 }
 
+#web_logo p{
+    font-family: 'Protest Riot', sans-serif;
+    transition: transform 0.3s ease-in-out;
+    font-size: 15px;
+}
+
 .web_logo{
-    flex: 2;
     margin: 0%;
     width: 50px;
     margin: 0px;
+}
+
+#web_logo:hover {
+    transform: translateX(-4px) rotate(-4deg); 
+}
+
+p{
+    background-image: linear-gradient(to right, #ff009d, #1900ff); /* Ajoutez les couleurs de votre dégradé ici */
+    -webkit-background-clip: text; /* Propriété nécessaire pour appliquer le dégradé au texte */
+    color: transparent; /* Rend le texte transparent pour que le dégradé soit visible */ 
+
 }
 
 
@@ -59,6 +72,10 @@ input{
     padding: 50px 0px;
 }
 
+.medal_img , .profile_icon{
+    width: 50px;
+}
+
 .search_img {
     height: 20px;
     margin-left: 5px;
@@ -70,6 +87,7 @@ button{
     border: 1px solid rgb(104, 66, 255);;
     font-weight: bold;
     background-color:rgb(104, 66, 255);
+    transition: transform 0.5s ease-in-out;
     
 }
 
@@ -93,16 +111,44 @@ button:hover{
 }
 
 .grid img, .grid2 img {
-    width: 300px;
-    height: 200px;
+    width: 200px;
+    height: 100px;
     object-fit: cover;
-    transition: transform 0.3s ease-in-out;
     border: 5px solid rgba(33, 34, 51, 0.9);
     border-radius: 20px;
     padding: 0%;
     margin: 0%;
+    transition: transform 0.3s ease-in-out;
+}
+
+h4 {
+    color: rgb(255, 255, 255);
+    font-weight: 100;
+    padding-bottom: 5px;
+}
+
+.image-container h4 {
+    text-align: center;
+    border-radius: 20px;
+    margin-top: 0px;
+} 
+
+.image-container{
+    border: 1px solid rgba(33, 34, 51, 0.9);
+    border-radius: 20px;
+    background-color: rgba(33, 34, 51, 0.9);
 }
 
 h3 {
-    color: white;
+    background-image: linear-gradient(to right, #ff009d, #1900ff); /* Ajoutez les couleurs de votre dégradé ici */
+    -webkit-background-clip: text; /* Propriété nécessaire pour appliquer le dégradé au texte */
+    color: transparent; /* Rend le texte transparent pour que le dégradé soit visible */    
+    border-bottom: 1px solid rgb(255, 255, 255);
+    padding: 5px 0%;
+    text-align: center;
+    margin-left: 10%;
+    margin-right: 10%;
+    font-weight:bold;
+    font-size: x-large;
 }
+
