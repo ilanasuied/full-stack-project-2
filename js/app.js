@@ -11,14 +11,14 @@ const initialBorder2 = game2.style.border;
 
 
 //execute this function when the mouse is over
-function onOverImage(){
+function onOverImage() {
     game1.src = "./images/giphy (2).gif";
     game1.style.border = "5px solid blue";
     game1.style.transform = 'scale(1.2)';
 }
 
 //execute this functioin when the mouse is out
-function onoutImage(){
+function onoutImage() {
     game1.src = initialSrc;
     game1.style.border = initialBorder;
     game1.style.transform = 'scale(1)';
@@ -30,14 +30,14 @@ game1.addEventListener("mouseout", onoutImage)
 
 
 //execute this function when the mouse is over
-function onOverImage2(){
+function onOverImage2() {
     game2.src = "./images/giphy (3).gif";
     game2.style.border = "5px solid blue";
     game2.style.transform = 'scale(1.2)';
 }
 
 //execute this functioin when the mouse is out
-function onoutImage2(){
+function onoutImage2() {
     game2.src = initialSrc2;
     game2.style.border = initialBorder2;
     game2.style.transform = 'scale(1)';
@@ -47,4 +47,39 @@ function onoutImage2(){
 game2.addEventListener("mouseover", onOverImage2)
 game2.addEventListener("mouseout", onoutImage2)
 
+
+
+// Sélectionnez l'élément d'entrée de la barre de recherche
+var searchInput = document.getElementById('search');
+function searchGame() {
+    // Récupérez la valeur saisie dans la barre de recherche
+    var searchText = searchInput.value.toLowerCase();
+
+    // Sélectionnez tous les titres des éléments que vous souhaitez vérifier
+    var titles = document.querySelectorAll('.image-container h4');
+    var newContent = document.createTextNode("We don't have it yet");
+    // Parcourez les titres et vérifiez s'ils correspondent à la recherche
+    titles.forEach(function (title) {
+        var titleText = title.textContent.toLowerCase();
+
+        // Comparez les textes et affichez/masquez l'élément en conséquence
+        if (titleText == searchText) {
+            newContent = document.createTextNode("We have this game!");
+        }
+    });
+    const newH2 = document.createElement("h2");
+    newH2.appendChild(newContent);
+    searchInput.parentNode.appendChild(newH2);
+
+
+    //remove the changes 4 seconds later
+    setTimeout(gotoInitialFormat , 2000);
+    function gotoInitialFormat() {
+        searchInput.parentNode.removeChild(newH2);
+    } 
+}
+
+
+// Ajoutez un écouteur d'événements pour détecter les changements dans la barre de recherche
+searchInput.addEventListener('change', searchGame);
 

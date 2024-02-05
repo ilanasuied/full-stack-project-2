@@ -7,7 +7,7 @@
 #web_logo p{
     font-family: 'Protest Riot', sans-serif;
     transition: transform 0.3s ease-in-out;
-    font-size: 15px;
+    font-size: 10px;
 }
 
 .web_logo{
@@ -39,7 +39,7 @@ nav ul{
     top: 0px;
     margin-top: 0px;
     margin-bottom: 0px;
-    padding: 20px;
+    padding-top: 5px;
     
     /*turn the navbar to flex and center the content*/
     display: flex;
@@ -52,7 +52,7 @@ nav ul{
 nav li {
     display: inline-block;
     flex: 1;
-    padding: 10px;
+    padding: 10px 10px 0px 10px;
     color: white;
     cursor: pointer;
 }
