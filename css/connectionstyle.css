@@ -1,0 +1,102 @@
+.formcontact {
+    padding: 20px;
+    margin-bottom: 20px;
+    margin-top: 25%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    
+}
+#web_logo p{
+    font-family: 'Protest Riot', sans-serif;
+    transition: transform 0.3s ease-in-out;
+    font-size: 12px;
+    
+}
+#web_logo{
+    margin-left: 5%;
+    margin-top: 5%;
+}
+
+.web_logo{
+    margin: 0%;
+    width: 50px;
+    margin: 0px;
+}
+
+#web_logo:hover {
+    transform: translateX(-4px) rotate(-4deg); 
+}
+p{
+    margin: 0;
+    background-image: linear-gradient(to right, #ff009d, #1900ff); /* Ajoutez les couleurs de votre dégradé ici */
+    -webkit-background-clip: text; /* Propriété nécessaire pour appliquer le dégradé au texte */
+    color: transparent; /* Rend le texte transparent pour que le dégradé soit visible */ 
+
+}
+body{
+    background-color: black;
+
+}
+
+input{
+    display: block;/*ממקד כל אחד בבלוק כדי שיופעיו שורה אחרי שורה*/
+    border-radius: 15px;
+    padding: 5px 10px;
+    background-color: rgb(141, 140, 140);
+    border: 2px solid rgb(104, 66, 255);
+    transition: transform 0.5s ease-in-out;
+}
+::placeholder{
+      color: black;
+      font-weight: bolder;
+      font-style: italic;
+}
+input:hover{
+    transform: scale(1.2); 
+}
+button{
+    border-radius: 15px;
+    padding: 7px 15px;
+    border: 1px solid rgb(104, 66, 255);;
+    font-weight: bold;
+    background-color:rgb(104, 66, 255);
+    transition: transform 0.5s ease-in-out;
+    
+}
+
+button:hover{
+    color: #DBE9EE;
+    transform: scale(1.2);
+}
+.bth {
+    background-color: #089da1;
+    color: #fff;
+    padding: 10px 20px;/*מוסיף ריפוד ללחצן, ומספק מרחב סביב הטקס*/
+    cursor: pointer;
+    border: none;/*מסיר את הגבול מהלחצן*/
+    font-size: 16px;
+    margin-left: 15px;
+}
+.bth:hover {
+    background-color: #07787a;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 10%;
+}
+.container button{
+    padding: 10px 30px;
+    
+}
+iframe{
+    width: 50%;
+    height: 100%;
+}

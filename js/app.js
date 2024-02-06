@@ -83,3 +83,13 @@ function searchGame() {
 // Ajoutez un écouteur d'événements pour détecter les changements dans la barre de recherche
 searchInput.addEventListener('change', searchGame);
 
+function showpage(){
+    var page = document.getElementById("btn");
+    page.style.display = "block";
+    let newiframe = document.createElement("iframe")
+    let src = document.createAttribute("src")
+    src.value="./html/connection.html"
+    newiframe.setAttributeNode(src)
+    page.appendChild(newiframe)
+    console.log(page)
+}
