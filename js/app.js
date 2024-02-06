@@ -83,8 +83,8 @@ function searchGame() {
 // Ajoutez un écouteur d'événements pour détecter les changements dans la barre de recherche
 searchInput.addEventListener('change', searchGame);
 
-function showpage(){
-    var page = document.getElementById("btn");
+/*function showpage(){
+    var page = document.getElementById("window_connection");
     page.style.display = "block";
     let newiframe = document.createElement("iframe")
     let src = document.createAttribute("src")
@@ -92,4 +92,13 @@ function showpage(){
     newiframe.setAttributeNode(src)
     page.appendChild(newiframe)
     console.log(page)
+}*/
+document.getElementById('openModalBtn').addEventListener('click', openModal);
+
+function openModal() {
+  document.getElementById('modal').style.display = 'block';
+}
+
+function closeModal() {
+  document.getElementById('modal').style.display = 'none';
 }

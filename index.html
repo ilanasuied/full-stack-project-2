@@ -2,15 +2,22 @@
 <html lang="en">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="./css/style.css">
-<link href="https://fonts.googleapis.com/css2?family=Happy+Monkey&family=Orbitron&family=Protest+Riot&family=Rubik:wght@300;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./css/connectionstyle.css">
+<link
+    href="https://fonts.googleapis.com/css2?family=Happy+Monkey&family=Orbitron&family=Protest+Riot&family=Rubik:wght@300;800&display=swap"
+    rel="stylesheet">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Happy+Monkey&family=Orbitron&family=Pacifico&family=Protest+Riot&family=Rubik:wght@300;800&display=swap" rel="stylesheet">
+<link
+    href="https://fonts.googleapis.com/css2?family=Happy+Monkey&family=Orbitron&family=Pacifico&family=Protest+Riot&family=Rubik:wght@300;800&display=swap"
+    rel="stylesheet">
+
 <head>
     <title>games</title>
 </head>
+
 <body>
-    
+
     <nav>
         <ul>
             <li id="web_logo">
@@ -18,9 +25,7 @@
                 <img src="./images/video-game.png" alt="web_logo" class="web_logo">
             </li>
             <li>
-                <!--<button id="btn" onclick="showpage()">connection</button>-->
-                    <a href="./html/connection.html">connection</a>
-                    <a href="./html/connection.html">connection</a>
+                <button id="openModalBtn">connection</button>
             </li>
             <li>
                 <label for="search"></label>
@@ -34,6 +39,15 @@
             </li>
         </ul>
     </nav>
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div class="container">
+                <a href="./html/singin.html"><button>sing in</button></a>
+                <a href="./html/login.html"><button>log in</button></a>
+            </div>
+        </div>
+    </div>
     <div class="games">
         <div class="grid">
             <div class="image-container">
@@ -69,7 +83,7 @@
                 <h4>Cars</h4>
             </div>
         </div>
-        
+
         <h3>our selection for you :</h3>
         <div class="grid2">
             <div class="image-container">
@@ -100,13 +114,13 @@
                 <img src="./images/istockphoto-1364554121-1024x1024.jpg">
                 <h4>Hacking</h4>
             </div>
-            
+
             <div class="image-container">
                 <img src="./images/istockphoto-1212608306-1024x1024.jpg">
                 <h4>Virus</h4>
             </div>
 
-            
+
         </div>
     </div>
     <script src="./js/app.js"></script>

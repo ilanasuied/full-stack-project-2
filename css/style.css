@@ -4,36 +4,13 @@
     padding: 0;
 }
 
-#web_logo p{
-    font-family: 'Protest Riot', sans-serif;
-    transition: transform 0.3s ease-in-out;
-    font-size: 10px;
-}
-
-.web_logo{
-    margin: 0%;
-    width: 50px;
-    margin: 0px;
-}
-
-#web_logo:hover {
-    transform: translateX(-4px) rotate(-4deg); 
-}
-
-p{
-    background-image: linear-gradient(to right, #ff009d, #1900ff); /* Ajoutez les couleurs de votre dégradé ici */
-    -webkit-background-clip: text; /* Propriété nécessaire pour appliquer le dégradé au texte */
-    color: transparent; /* Rend le texte transparent pour que le dégradé soit visible */ 
-
-}
-
 
 nav ul{
 
     background-color: rgba(33, 34, 51, 0.9);
     /*fixe the position*/
     position: fixed;
-    z-index: 10;
+    z-index: 3;
     width: 100%;
     text-align:center;
     top: 0px;
