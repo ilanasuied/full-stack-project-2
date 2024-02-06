@@ -31,7 +31,7 @@ body {
     transform: translateX(-4px) rotate(-4deg);
 }
 
-p {
+#web_logo p {
     background-image: linear-gradient(to right, #ff009d, #1900ff);
     /* Ajoutez les couleurs de votre dégradé ici */
     -webkit-background-clip: text;
@@ -138,3 +138,29 @@ button:hover {
     cursor: pointer;
     color: red;
 }
+
+.singin_container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#notValidMessage {
+    display: none;
+    background-color: #ffcccc; /* רקע בצבע אדום חלש */
+    border: 2px solid #ff0000; /* מסגרת עם קווים אדומים */
+    border-radius: 8px; /* פינות מעוגלות */
+    padding: 20px; /* מרווח בתוך הדיב */
+    max-width: 400px; /* רוחב מרבי */
+    margin: 20px auto; /* מרווח מעלה ומטה, ומרכז את הדיב באמצעות margin:auto */
+}
+
+#notValidMessage h2 {
+    color: #ff0000; /* צבע כותרת באדום */
+}
+
+#notValidMessage p {
+    font-size: 16px; /* גודל גופן */
+    line-height: 1.5; /* גובה השורה */
+}
+

@@ -72,7 +72,7 @@ function searchGame() {
     searchInput.parentNode.appendChild(newH2);
 
 
-    //remove the changes 4 seconds later
+    //remove the changes 2 seconds later
     setTimeout(gotoInitialFormat , 2000);
     function gotoInitialFormat() {
         searchInput.parentNode.removeChild(newH2);
