@@ -83,16 +83,7 @@ function searchGame() {
 // Ajoutez un écouteur d'événements pour détecter les changements dans la barre de recherche
 searchInput.addEventListener('change', searchGame);
 
-/*function showpage(){
-    var page = document.getElementById("window_connection");
-    page.style.display = "block";
-    let newiframe = document.createElement("iframe")
-    let src = document.createAttribute("src")
-    src.value="./html/connection.html"
-    newiframe.setAttributeNode(src)
-    page.appendChild(newiframe)
-    console.log(page)
-}*/
+
 document.getElementById('openModalBtn').addEventListener('click', openModal);
 
 function openModal() {
@@ -102,3 +93,12 @@ function openModal() {
 function closeModal() {
   document.getElementById('modal').style.display = 'none';
 }
+
+function openModalProfile() {
+    document.getElementById('profile_modal').style.display = 'block';
+  }
+  
+  function closeModalProfile() {
+    document.getElementById('profile_modal').style.display = 'none';
+  }
+

@@ -1,18 +1,20 @@
-var getValueBtn = document.getElementById("submitBtn");
-
-getValueBtn.addEventListener('click', foo)
-function foo() {
-    event.preventDefault();
-}
+// var getValueBtn = document.getElementById("submitBtn");
+// getValueBtn.addEventListener('click', foo);
+// function foo() {
+//     event.preventDefault();
+// }
 
 //check if the user inout is valid
+
+var currentUser;
+
 function submitFun() {
 
     //save the username and the password
     const username = document.getElementById("username");
     const password = document.getElementById("password");
 
-    
+
     //this flag will be true if the username is invalid
     let userinval = false;
     let passwordinval = false;
@@ -34,20 +36,19 @@ function submitFun() {
         }
     }
 
-    if(userinval || userinval){
+    if (userinval || passwordinval) {
         createDiv(text);
         return;
     }
-    
 
-    if(userinval == false && passwordinval == false){
-        searchUserName(username.value);
-        //cehckCorrectPassword()
+
+    if (userinval == false && passwordinval == false) {
+        searchUserName(username.value, password.value);
     }
 }
 
 
-function createDiv(text){
+function createDiv(text) {
 
     //create a new text node
     let txt = document.createTextNode(text);
@@ -61,7 +62,7 @@ function createDiv(text){
     //connect the new p element with the rext, into the div
     div.appendChild(p);
 
-     //show the alert
+    //show the alert
     div.style.display = "block";
 
 
@@ -92,21 +93,27 @@ function checkPassword(password) {
 }
 
 //search if there is this username in the storage
-function searchUserName(username){
-    for(let i=0; i<localStorage.length; i++) {
-       if(localStorage.i(users.username) === username){
-            if(localStorage.i(users.password) === password){
-                if(localStorage.i(checkConnecting) > 3){
+function searchUserName(username, password) {
+    for (let i = 0; i < localStorage.length; i++) {
+        if (localStorage.key(i) == username) {
+            if (parseInt(JSON.parse(localStorage.getItem(username)).password) == password) {
+                if (JSON.parse(localStorage.getItem(username)).checkConnecting > 3) {
                     createDiv("too many trying!!!");
                 }
+                currentUser = username;
                 return;
             }
-            localStorage.i(checkConnecting)++;
+            let user = JSON.parse(localStorage.getItem(username));
+            user.checkConnecting +=1;
+            localStorage.setItem(username, JSON.stringify(user));
             createDiv("incorrect password");
+            return;
         }
     }
     createDiv("please register");
 }
+
+
 
 
 // users = {
@@ -119,3 +126,47 @@ function searchUserName(username){
 //     winCount: 0
 //     checkConnecting: 0
 // }
+
+//למחיקה
+//document.getElementById('sumbtn').addEventListener('click', foo)
+
+
+function login() {
+
+    if (checkUserName(document.getElementById('username').value)) {
+        for (let i = 0; i < localStorage.length; i++) {
+            if (localStorage.key(i) == username) {
+                createDiv("this username is already taken");
+                return;
+            }
+        }
+        if (checkPassword(document.getElementById('password').value)) {
+            let user = {
+                username: document.getElementById('username').value,
+                password: document.getElementById('password').value,
+                city: document.getElementById('city').value,
+                country: document.getElementById('country').value,
+                mail: document.getElementById('email').value,
+                entrieCount: 1,
+                winCount: 0,
+                checkConnecting: 0
+            }
+             //store the date on the local storage
+            localStorage.setItem(user.username, JSON.stringify(user));
+            currentUser = document.getElementById('username').value;
+            return;
+        }
+        createDiv("invalid password");
+    }   
+        createDiv("invalid username");
+
+}
+
+
+//////////////////////////////////////////////////////////////////////
+document.getElementById('openProfile').addEventListener('click', fullProfile)
+function fullProfile(){
+    console.log('blbjibjjifdj');
+    document.getElementById('first-name').value = 'nbbnoibnbonboihbeoihjr';
+    JSON.parse(localStorage.getItem(username)).checkConnecting
+}

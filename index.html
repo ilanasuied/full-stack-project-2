@@ -32,10 +32,7 @@
                 <input type="text" name="search" id="search" placeholder="🔍search">
             </li>
             <li>
-                <img src="./images/medal.png" alt="medal icon" class="medal_img">
-            </li>
-            <li>
-                <img src="./images/user.png" alt="profile icon" class="profile_icon">
+                <img src="./images/user.png" alt="profile icon" class="profile_icon" onclick="openModalProfile()" id="openProfile">
             </li>
         </ul>
     </nav>
@@ -48,6 +45,24 @@
             </div>
         </div>
     </div>
+    
+    <div id="profile_modal" class="profile_modal">
+        <div class="modal-content-profile">
+            <span class="close" onclick="closeModalProfile()">&times;</span>
+            <div class="container_profile">
+                <ul>
+                    <li id="first-name">First Name:</li>
+                    <li>Last Name:</li>
+                    <li>Email:</li>
+                    <li>Country:</li>
+                    <li>City:</li>
+                    <li>Amount of entries:</li>
+                    <li>Amount of wins: </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
     <div class="games">
         <div class="grid">
             <div class="image-container">
