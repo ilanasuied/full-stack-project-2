@@ -101,4 +101,14 @@ function openModalProfile() {
   function closeModalProfile() {
     document.getElementById('profile_modal').style.display = 'none';
   }
+// Function to scroll to the top of the page
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth' // Optional, smooth scrolling animation
+    });
+}
+
+// Event listener to trigger scroll to top function when button is clicked
+document.getElementById('scrollToTopBtn').addEventListener('click', scrollToTop);
 

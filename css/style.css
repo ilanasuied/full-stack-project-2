@@ -31,7 +31,7 @@ nav li {
     flex: 1;
     padding: 10px 10px 0px 10px;
     color: white;
-    cursor: pointer;
+    
 }
 
 input{
@@ -40,6 +40,7 @@ input{
     margin-left: 4px;
     font-style: oblique;
     padding: 7px 15px;
+    
 }
 
 .games{
@@ -51,6 +52,7 @@ input{
 
 .profile_icon{
     width: 50px;
+    cursor: pointer;
 }
 
 .medal_img {
@@ -87,6 +89,7 @@ input{
     padding: 0%;
     margin: 0%;
     transition: transform 0.3s ease-in-out;
+    cursor: pointer;
 }
 
 h4 {
@@ -176,3 +179,30 @@ h3 {
 .modal-content-profile li {
     padding:20px;
 }
+
+footer {
+    background-color: rgba(33, 34, 51, 0.9);
+    padding: 20px;
+    text-align: center;
+    /* Set position to fixed */
+    bottom: 0;
+    left: 0;
+    width: 100%; /* Set width to 100% */
+    z-index: 999; /* Set z-index to ensure it's above other content */
+}
+
+footer button {
+    background-color: #ff009d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+footer button:hover {
+    background-color: #ff0055;
+}
+

@@ -70,6 +70,7 @@ button {
     font-weight: bold;
     background-color: rgb(104, 66, 255);
     transition: transform 0.5s ease-in-out;
+    cursor: pointer;
 
 }
 
