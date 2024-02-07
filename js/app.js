@@ -1,3 +1,10 @@
+window.addEventListener('load', function(event){
+    if(localStorage.getItem('currentUser') !== null){
+        this.document.getElementById('openModalBtn').innerHTML = "Disconnect"
+    }
+})
+
+
 //const variables for the first game
 const game1 = document.getElementById("first_game")
 const initialSrc = game1.src;
@@ -87,7 +94,12 @@ searchInput.addEventListener('change', searchGame);
 document.getElementById('openModalBtn').addEventListener('click', openModal);
 
 function openModal() {
-  document.getElementById('modal').style.display = 'block';
+    if(localStorage.getItem('currentUser') === null){
+        document.getElementById('modal').style.display = 'block';
+    } else {
+        document.getElementById('openModalBtn').innerHTML = "Connection";
+        localStorage.removeItem('currentUser');
+    }
 }
 
 function closeModal() {

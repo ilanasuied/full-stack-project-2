@@ -100,7 +100,7 @@ function searchUserName(username, password) {
                 if (JSON.parse(localStorage.getItem(username)).checkConnecting > 3) {
                     createDiv("too many trying!!!");
                 }
-                currentUser = username;
+                localStorage.setItem('currentUser', username);
                 return;
             }
             let user = JSON.parse(localStorage.getItem(username));
@@ -119,7 +119,7 @@ function searchUserName(username, password) {
 // users = {
 //     username: "",
 //     password: "",
-//     city:"",
+//     name:"",
 //     country:"",
 //     mail: "",
 //     entrieCount: 0,
@@ -131,7 +131,7 @@ function searchUserName(username, password) {
 //document.getElementById('sumbtn').addEventListener('click', foo)
 
 
-function login() {
+function signin() {
 
     if (checkUserName(document.getElementById('username').value)) {
         for (let i = 0; i < localStorage.length; i++) {
@@ -144,16 +144,17 @@ function login() {
             let user = {
                 username: document.getElementById('username').value,
                 password: document.getElementById('password').value,
-                city: document.getElementById('city').value,
-                country: document.getElementById('country').value,
+                name: document.getElementById('name').value,
                 mail: document.getElementById('email').value,
                 entrieCount: 1,
                 winCount: 0,
                 checkConnecting: 0
             }
-             //store the date on the local storage
+            //store the date on the local storage
             localStorage.setItem(user.username, JSON.stringify(user));
-            currentUser = document.getElementById('username').value;
+
+            //store in the key 'currentuser' the username of the user that is courently log in 
+            localStorage.setItem('currentUser', user.username);
             return;
         }
         createDiv("invalid password");
@@ -163,10 +164,21 @@ function login() {
 }
 
 
-//////////////////////////////////////////////////////////////////////
+
 document.getElementById('openProfile').addEventListener('click', fullProfile)
 function fullProfile(){
-    console.log('blbjibjjifdj');
-    document.getElementById('first-name').value = 'nbbnoibnbonboihbeoihjr';
-    JSON.parse(localStorage.getItem(username)).checkConnecting
+    if(localStorage.getItem('currentUser') === null){
+        let user = localStorage.getItem('currentUser');
+    document.getElementById('name').innerHTML ='Name:';
+    document.getElementById('mail').innerHTML = 'Mail:';
+    document.getElementById('amountEntries').innerHTML = 'Amount Of Entries:';
+    document.getElementById('amountWins').innerHTML = 'Amount Of Wins';
+   
+    }
+    let user = localStorage.getItem('currentUser');
+    document.getElementById('name').innerHTML ='Name: ' + JSON.parse(localStorage.getItem(user)).name;
+    document.getElementById('mail').innerHTML = 'Mail: ' + JSON.parse(localStorage.getItem(user)).mail;
+    document.getElementById('amountEntries').innerHTML = 'Amount Of Entries: ' + JSON.parse(localStorage.getItem(user)).entrieCount;
+    document.getElementById('amountWins').innerHTML = 'Amount Of Wins ' + JSON.parse(localStorage.getItem(user)).winCount;
+   
 }

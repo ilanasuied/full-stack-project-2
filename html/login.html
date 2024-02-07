@@ -20,21 +20,17 @@
         <p>gameZone</p>
         <img src="../images/video-game.png" alt="web_logo" class="web_logo">
     </div>
-    <div id="notValidMessage"></div>
-                                
-    <form class="formcontact" action="../index.html"> <!-- טופס לשליחת פרטי התקשרות -->
-        <!-- שדות קלט עבור שם ושם משפחה, דואר אלקטרוני, והודעה -->
-        <input type="text" placeholder=" first name" class="box" id="first_name" required>
-        <input type="text" placeholder="last name" class="box" id="last_name" required>
-        <input type="email" placeholder="email" class="box" id="email">
-        <input type="text" placeholder="country" class="box" id="country">
-        <input type="text" placeholder="city" class="box" id="city">
-        <input type="text" name="username" id="username" placeholder="user name:" required>
-        <input type="password" name="password" id="password"placeholder="password:"  required>
-        <button id="sumbtn" onclick="login()">Connect</button>
-    </form>
-    <script src="../js/validInput.js"></script>
-
-</body>
-
+    <div class="login_container">
+        
+        <form class="formcontact" action="../index.html">
+            <input type="text" name="username" id="username" placeholder="user name:" required>
+            <input type="password" name="password" id="password" placeholder="password:" required>
+            <button id="submitBtn" onclick="submitFun()">Connect</button>
+        </form>
+        <div id="notValidMessage"></div>
+    </div>
     
+   
+    
+    <script src="../js/validInput.js"></script>
+</body>
