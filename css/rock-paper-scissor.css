@@ -1,36 +1,56 @@
 body {
-background-color: rgb(25, 25 ,25);
-color: white;
-font-family: Arial;
+    background-color: rgb(25, 25, 25);
+    color: white;
+    font-family: Arial;
+    display: flex;
+    justify-content: center;
+    /* Center horizontally */
+    align-items: center;
+    /* Center vertically */
+    height: 100vh;
+    /* Ensure the body covers the full viewport height */
+    margin: 0
+}
+
+.container {
+    text-align: center; /* Center text inside container */
 }
 
 .title {
     font-size: 30px;
-    font-weight: bold;/*מודגש*/
+    font-weight: bold;
+    /*מודגש*/
+
 }
 
 .img-icon {
-   height: 50px; 
+    height: 50px;
+
 }
 
 .move-button {
-    background-color: transparent;/*רקע שקוף לכפתור*/
-    border:  3px solid white;
+    background-color: transparent;
+    /*רקע שקוף לכפתור*/
+    border: 3px solid white;
     width: 120px;
     height: 120px;
     border-radius: 60px;
     margin-right: 10px;
     cursor: pointer;
+
+
 }
 
 .result {
-  font-size: 25px;  
-  font-weight: bold;
-  margin-top: 50px;
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 50px;
+
 }
 
 .score {
     margin-top: 60px;
+
 }
 
 .reset-score-button {
@@ -39,4 +59,5 @@ font-family: Arial;
     font-size: 15px;
     padding: 8px 15px;
     cursor: pointer;
+
 }
