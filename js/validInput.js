@@ -125,6 +125,8 @@ function searchUserName(username, password) {
 //     entrieCount: 0,
 //     winCount: 0
 //     checkConnecting: 0
+//     scoreGame2: 0
+
 // }
 
 //למחיקה
@@ -148,7 +150,8 @@ function signin() {
                 mail: document.getElementById('email').value,
                 entrieCount: 1,
                 winCount: 0,
-                checkConnecting: 0
+                checkConnecting: 0,
+                scoreGame2: 0
             }
             //store the date on the local storage
             localStorage.setItem(user.username, JSON.stringify(user));

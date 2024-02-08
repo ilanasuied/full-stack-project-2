@@ -1,4 +1,3 @@
-/* import font from google font*/
 *{
     margin: 0;
     padding: 0;
@@ -15,6 +14,7 @@ body{
     background-size: cover;
     background-image: url('../images/space.gif');
     background-size: cover;
+    
 }
 
 .game_infos, .game_btn{
@@ -39,6 +39,8 @@ body{
     box-shadow: 0 0 10px white;
     border-radius: 6px;
     overflow: hidden; /* the target will not get out of the container*/
+    max-width: 500px; /* Largeur maximale du contenu */
+
 }
 
 #target{
@@ -78,40 +80,36 @@ button{
     }
 }
 
-/* Style pour le fond semi-transparent noir */
+
 .modal {
-    display: none; /* Par défaut, le modal est caché */
-    position: fixed; /* Position fixe pour couvrir l'ensemble de la fenêtre */
+    display: none; /* By default, the modal is hidden */
+    position: fixed; 
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Noir semi-transparent */
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
-/* Style pour le contenu du modal */
+
 .modal-content {
-    background-color: #fff; /* Fond blanc pour le contenu */
+    background-color: #fff; 
     border-radius: 10px;
-    width: 50%; /* Largeur du contenu */
-    max-width: 400px; /* Largeur maximale du contenu */
+    width: 50%; 
+    max-width: 400px; 
     padding: 20px;
     text-align: center;
-    position: absolute; /* Position absolue pour centrer le contenu */
+    position: absolute; /* Position absolute to center the content */
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
-/* Style pour le message "Game Over" */
 .modal-content h2 {
-    color: black; /* Couleur rouge pour le titre */
-    font-size: 36px; /* Taille de la police */
+    color: black; 
+    font-size: 36px; 
 }
 .modal-content p{
     color: black;
-}
-
-.modal-content p {
-    font-size: 18px; /* Taille de la police pour le message personnalisé */
+    font-size: 18px;
 }

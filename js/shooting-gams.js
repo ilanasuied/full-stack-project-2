@@ -58,9 +58,17 @@ btn.onclick = function(){
 
 //show game over message 
 function showGameOver(score) {
+    let userName = localStorage.getItem('currentUser');
+    let user = JSON.parse(localStorage.getItem(userName));
+    let maxScore = user.scoreGame2;
+    if(maxScore < score){
+        maxScore = score;
+        user.scoreGame2 = score;
+        localStorage.setItem( userName, JSON.stringify(user));
+    }
     var modal = document.getElementById("gameOverModal");
     modal.style.display = "block";
-    document.getElementById('showScore').textContent  = `Score : ${score}`
+    document.getElementById('showScore').textContent  = `Score : ${score} Your best score : ${maxScore}`;
     //disappear the message after 2 seconds
     setInterval(function(){
         modal.style.display = "none";
