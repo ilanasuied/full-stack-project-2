@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="../css/rock-paper-scissor.css">
+    <title>Rock Paper Scissors</title>
+</head>
+
+<body>
+    <!--כותרת למשחק שלנו-->
+    <p class="title">Rock Paper Scissors</p>
+    <!-- כפתורים ליצרית מהלכי המחשב-->
+    <button onclick="
+      playGame('rock');
+    " class="move-button">
+        <img src="../images/rock-emoji.png" class="img-icon">
+    </button><!--יצרנו משתנה שבכל לחיצה על הכפתור מביא לנו מספר רנדומלי בין 0 ל-1 כעת נצרך להמיר אותו למהלך של המשחק שזה אבן נייר ומספריים נחלק כל חלק בין 0 ל-1 לשליש ואז נקבע מה כל חלק יהיה כלומר איזה מהלך וכך המרנואת המספרים למהלכים  -->
+
+    <button onclick="
+      playGame('paper');
+    " class="move-button">
+        <img src="../images/paper-emoji.png" class="img-icon">
+    </button>
+
+    <button onclick="
+      playGame('scissors');
+    " class="move-button">
+        <img src="../images/scissors-emoji.png" class="img-icon">
+    </button>
+
+    <p class="js-result result"></p>
+    <p class="js-moves"></p>
+    <p class="js-score score"></p>
+
+    <!--כפתור לאיפוס הנקודות-->
+    <button onclick="
+      score.wins = 0;
+      score.losses = 0;
+      score.ties = 0;
+      localStorage.removeItem('score');//הרי זה כתפור איפוס אז אנחנו רוצים להסיר את כל מה ששמרנו עד עכשיו באחסון מקומי  ולשחק מחדש שהכל מאופס
+      updateScoreElement();
+    " class="reset-score-button">Reset Score</button>
+
+
+</body>
+<script src="../js/rock-paper-scissors.js"></script>
+</html>
