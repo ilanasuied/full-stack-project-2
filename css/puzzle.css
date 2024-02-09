@@ -1,0 +1,25 @@
+.pieces img,
+.puzzle img
+{
+    height: 150px;
+    margin: 10px;
+    border: 2px solid black;
+}
+
+.pieces{
+    border: 2px solid black;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.puzzle{
+    border: 2px solid red;
+    height: 170px;
+    width: 255px;
+}

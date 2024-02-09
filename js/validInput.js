@@ -171,7 +171,6 @@ function signin() {
 document.getElementById('openProfile').addEventListener('click', fullProfile)
 function fullProfile(){
     if(localStorage.getItem('currentUser') === null){
-        let user = localStorage.getItem('currentUser');
     document.getElementById('name').innerHTML ='Name:';
     document.getElementById('mail').innerHTML = 'Mail:';
     document.getElementById('amountEntries').innerHTML = 'Amount Of Entries:';

@@ -31,10 +31,10 @@ document.getElementById("space").addEventListener("mouseout", function(){
 })
 
 document.getElementById("first_game").addEventListener("mouseover", function(){
-    mouseoverImage('first_game', "./images/giphy (2).gif");
+    mouseoverImage('first_game', "./images/rock paper scissor.gif");
 });
 document.getElementById("first_game").addEventListener("mouseout", function(){
-    mouseoutImage('first_game', "./images/istockphoto-1424506235-1024x1024.jpg" );
+    mouseoutImage('first_game', "./images/first game.png" );
 });
 
 document.getElementById("second_game").addEventListener("mouseover", function(){
