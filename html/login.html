@@ -16,12 +16,16 @@
 </head>
 
 <body>
-    <div id="web_logo">
-        <p>gameZone</p>
-        <img src="../images/video-game.png" alt="web_logo" class="web_logo">
+    <div class="header">
+        <div id="web_logo">
+            <p>gameZone</p>
+            <img src="../images/video-game.png" alt="web_logo" class="web_logo">
+        </div>
+        <a href="../index.html"><button class="exit_btn"><img class="exit_img" src="../images/logout.png"
+                    alt="go back to the menu"></button></a>
     </div>
     <div class="login_container">
-        
+
         <div class="formcontact">
             <input type="text" name="username" id="username" placeholder="user name:" required>
             <input type="password" name="password" id="password" placeholder="password:" required>
@@ -29,8 +33,8 @@
         </div>
         <div id="notValidMessage"></div>
     </div>
-    
-   
-    
+
+
+
     <script src="../js/validInput.js"></script>
 </body>

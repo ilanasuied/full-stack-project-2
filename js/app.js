@@ -118,17 +118,17 @@ document.getElementById('scrollToTopBtn').addEventListener('click', scrollToTop)
 document.getElementById('openProfile').addEventListener('click', fullProfile)
 function fullProfile(){
     if(localStorage.getItem('currentUser') === null){
-    document.getElementById('name').innerHTML ='Name:';
-    document.getElementById('mail').innerHTML = 'Mail:';
-    document.getElementById('amountEntries').innerHTML = 'Amount Of Entries:';
-    document.getElementById('amountWins').innerHTML = 'Amount Of Wins';
+    document.getElementById('name').innerHTML ='Name :';
+    document.getElementById('mail').innerHTML = 'Mail :';
+    document.getElementById('amountEntries').innerHTML = 'Amount Of Entries :';
+    document.getElementById('amountWins').innerHTML = 'Amount Of Wins :';
    
     }else{
         let user = localStorage.getItem('currentUser');
-        document.getElementById('name').innerHTML ='Name: ' + JSON.parse(localStorage.getItem(user)).name;
-        document.getElementById('mail').innerHTML = 'Mail: ' + JSON.parse(localStorage.getItem(user)).mail;
-        document.getElementById('amountEntries').innerHTML = 'Amount Of Entries: ' + JSON.parse(localStorage.getItem(user)).entrieCount;
-        document.getElementById('amountWins').innerHTML = 'Amount Of Wins ' + JSON.parse(localStorage.getItem(user)).winCount;    
+        document.getElementById('name').innerHTML ='Name : ' + JSON.parse(localStorage.getItem(user)).name;
+        document.getElementById('mail').innerHTML = 'Mail : ' + JSON.parse(localStorage.getItem(user)).mail;
+        document.getElementById('amountEntries').innerHTML = 'Amount Of Entries : ' + JSON.parse(localStorage.getItem(user)).entrieCount;
+        document.getElementById('amountWins').innerHTML = 'Amount Of Wins : ' + JSON.parse(localStorage.getItem(user)).winCount;    
     }
     
 }

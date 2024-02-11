@@ -136,3 +136,17 @@ button:hover {
     line-height: 1.5; /* גובה השורה */
 }
 
+.exit_img{
+    height: 15px;
+    width: 15px;
+}
+.exit_btn{
+    margin-top: 50px;;
+}
+.header{
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   margin: 40px;
+}
+

@@ -95,6 +95,10 @@ function searchUserName(username, password) {
                     createDiv("too many trying!!!");
                     return;
                 }
+                let user = JSON.parse(localStorage.getItem(username));
+                user.entrieCount += 1;
+                localStorage.setItem(username, JSON.stringify(user));
+                //set this user to be the current user
                 localStorage.setItem('currentUser', username);
                 window.location.href = '../index.html'
                 return;
