@@ -113,3 +113,12 @@ button{
 h2, p{
     background-color: #fff;
 }
+.exit_img{
+    height: 15px;
+    width: 15px;
+    background-color: rgb(32, 152, 152);
+}
+.exit_btn{
+    margin-top: 50px;
+    
+}

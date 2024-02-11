@@ -1,6 +1,6 @@
 window.onload = () => {
   "use strict";
-  
+
   var levelChosen = 8;
   createDivs();
   dropAndDrag();
@@ -90,12 +90,12 @@ window.onload = () => {
       showGameOver();
       clearInterval(interval);
     }, 10000)
-    let timerInterval = setInterval(function(){
-      if(parseInt(document.getElementById('timer').textContent) == 0){
+    let timerInterval = setInterval(function () {
+      if (parseInt(document.getElementById('timer').textContent) == 0) {
         document.getElementById('timer').textContent = 10;
       }
       document.getElementById('timer').textContent = parseInt(document.getElementById('timer').textContent) - 1;
-      if(parseInt(document.getElementById('timer').textContent) == 0){
+      if (parseInt(document.getElementById('timer').textContent) == 0) {
         clearInterval(timerInterval);
       }
     }, 1000);
@@ -134,11 +134,18 @@ window.onload = () => {
     var container = document.getElementById("container");
     //keep all the boxs on an array
     var boxes = Array.from(container.querySelectorAll(".box"));
-    for (let i = 0; i < boxes.length; i++) {  
+    for (let i = 0; i < boxes.length; i++) {
       if (parseFloat(boxes[i].textContent) !== i + 1) {
-        return 'you lost'
+        return 'you lose'
       }
     }
+    if (localStorage.getItem('currentUser') === null) {
+      return 'you win!!!'
+    }
+    let username = localStorage.getItem('currentUser');
+    let user = JSON.parse(localStorage.getItem(username));
+    user.winCount += 1;
+    localStorage.setItem(username, JSON.stringify(user));
     return 'you win!!!'
   }
 };

@@ -97,6 +97,7 @@ function searchUserName(username, password) {
                 }
                 let user = JSON.parse(localStorage.getItem(username));
                 user.entrieCount += 1;
+                user.checkConnecting = 0;
                 localStorage.setItem(username, JSON.stringify(user));
                 //set this user to be the current user
                 localStorage.setItem('currentUser', username);
@@ -134,7 +135,7 @@ function signin() {
     if (checkUserName(document.getElementById('username').value)) {
 
         //check if this username is free
-        if (localStorage.getItem(document.getElementById('username').value === null)) {
+        if (localStorage.getItem(document.getElementById('username').value) === null){
            
             if (checkPassword(document.getElementById('password').value)) {
                 let user = {
