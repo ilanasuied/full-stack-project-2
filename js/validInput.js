@@ -93,6 +93,7 @@ function searchUserName(username, password) {
             if (parseInt(JSON.parse(localStorage.getItem(username)).password) == password) {
                 if (JSON.parse(localStorage.getItem(username)).checkConnecting > 3) {
                     createDiv("too many trying!!!");
+                    return;
                 }
                 localStorage.setItem('currentUser', username);
                 window.location.href = '../index.html'
