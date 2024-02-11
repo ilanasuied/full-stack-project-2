@@ -1,9 +1,3 @@
-// var getValueBtn = document.getElementById("submitBtn");
-// getValueBtn.addEventListener('click', foo);
-// function foo() {
-//     event.preventDefault();
-// }
-
 //check if the user inout is valid
 
 var currentUser;
@@ -101,10 +95,11 @@ function searchUserName(username, password) {
                     createDiv("too many trying!!!");
                 }
                 localStorage.setItem('currentUser', username);
+                window.location.href = '../index.html'
                 return;
             }
             let user = JSON.parse(localStorage.getItem(username));
-            user.checkConnecting +=1;
+            user.checkConnecting += 1;
             localStorage.setItem(username, JSON.stringify(user));
             createDiv("incorrect password");
             return;
@@ -120,67 +115,51 @@ function searchUserName(username, password) {
 //     username: "",
 //     password: "",
 //     name:"",
-//     country:"",
 //     mail: "",
 //     entrieCount: 0,
 //     winCount: 0
 //     checkConnecting: 0
 //     scoreGame2: 0
-
 // }
 
-//למחיקה
-//document.getElementById('sumbtn').addEventListener('click', foo)
 
 
 function signin() {
 
     if (checkUserName(document.getElementById('username').value)) {
-        for (let i = 0; i < localStorage.length; i++) {
-            if (localStorage.key(i) == username) {
-                createDiv("this username is already taken");
+
+        //check if this username is free
+        if (localStorage.getItem(document.getElementById('username').value === null)) {
+           
+            if (checkPassword(document.getElementById('password').value)) {
+                let user = {
+                    username: document.getElementById('username').value,
+                    password: document.getElementById('password').value,
+                    name: document.getElementById('name').value,
+                    mail: document.getElementById('email').value,
+                    entrieCount: 1,
+                    winCount: 0,
+                    checkConnecting: 0,
+                    scoreGame2: 0
+                }
+                //store the date on the local storage
+                localStorage.setItem(user.username, JSON.stringify(user));
+
+                //store in the key 'currentuser' the username of the user that is courently log in 
+                localStorage.setItem('currentUser', user.username);
+                window.location.href = '../index.html'
                 return;
             }
-        }
-        if (checkPassword(document.getElementById('password').value)) {
-            let user = {
-                username: document.getElementById('username').value,
-                password: document.getElementById('password').value,
-                name: document.getElementById('name').value,
-                mail: document.getElementById('email').value,
-                entrieCount: 1,
-                winCount: 0,
-                checkConnecting: 0,
-                scoreGame2: 0
-            }
-            //store the date on the local storage
-            localStorage.setItem(user.username, JSON.stringify(user));
-
-            //store in the key 'currentuser' the username of the user that is courently log in 
-            localStorage.setItem('currentUser', user.username);
+            createDiv("invalid password");
+        }else{//else if this username is already taken
+            createDiv("this username is already taken");
             return;
         }
-        createDiv("invalid password");
-    }   
-        createDiv("invalid username");
 
-}
-
-
-
-document.getElementById('openProfile').addEventListener('click', fullProfile)
-function fullProfile(){
-    if(localStorage.getItem('currentUser') === null){
-    document.getElementById('name').innerHTML ='Name:';
-    document.getElementById('mail').innerHTML = 'Mail:';
-    document.getElementById('amountEntries').innerHTML = 'Amount Of Entries:';
-    document.getElementById('amountWins').innerHTML = 'Amount Of Wins';
-   
     }
-    let user = localStorage.getItem('currentUser');
-    document.getElementById('name').innerHTML ='Name: ' + JSON.parse(localStorage.getItem(user)).name;
-    document.getElementById('mail').innerHTML = 'Mail: ' + JSON.parse(localStorage.getItem(user)).mail;
-    document.getElementById('amountEntries').innerHTML = 'Amount Of Entries: ' + JSON.parse(localStorage.getItem(user)).entrieCount;
-    document.getElementById('amountWins').innerHTML = 'Amount Of Wins ' + JSON.parse(localStorage.getItem(user)).winCount;
-   
+    createDiv("invalid username");
+
 }
+
+
+
