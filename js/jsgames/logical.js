@@ -163,7 +163,7 @@ window.onload = () => {
     user.winCount += 1;
     localStorage.setItem(username, JSON.stringify(user));
 
-
+    modal_content.classList.add("win");
     return 'you win!!!'
   }
 };
