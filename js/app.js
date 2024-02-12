@@ -128,14 +128,17 @@ function fullProfile(){
     document.getElementById('name').innerHTML ='Name :';
     document.getElementById('mail').innerHTML = 'Mail :';
     document.getElementById('amountEntries').innerHTML = 'Amount Of Entries :';
-    document.getElementById('amountWins').innerHTML = 'Amount Of Wins :';
+    document.getElementById('amountWins').innerHTML = 'Amount Of Your Wins :';
    
     }else{
         let user = localStorage.getItem('currentUser');
         document.getElementById('name').innerHTML ='Name : ' + JSON.parse(localStorage.getItem(user)).name;
         document.getElementById('mail').innerHTML = 'Mail : ' + JSON.parse(localStorage.getItem(user)).mail;
         document.getElementById('amountEntries').innerHTML = 'Amount Of Entries : ' + JSON.parse(localStorage.getItem(user)).entrieCount;
-        document.getElementById('amountWins').innerHTML = 'Amount Of Wins : ' + JSON.parse(localStorage.getItem(user)).winCount;    
+        document.getElementById('amountWins').innerHTML = 'Amount Of Your Wins : ' + JSON.parse(localStorage.getItem(user)).winCount;    
     }
-    
+    if (localStorage.getItem('wins') !== null){
+        document.getElementById('wins').innerHTML ='Amount Of Wins : ' + localStorage.getItem('wins');
+
+    }
 }

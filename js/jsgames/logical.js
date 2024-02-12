@@ -139,6 +139,18 @@ window.onload = () => {
         return 'you lose'
       }
     }
+    //update the amount of total wins
+    if (localStorage.getItem('wins') === null) {
+      let wins = 0;
+      var winsString = wins.toString();
+      localStorage.setItem('wins', winsString);
+    }
+    let wins = parseInt(localStorage.getItem('wins'));
+    console.log(wins);
+    wins++;
+    localStorage.setItem('wins', wins.toString());
+
+    //if there is a user connected, update his wins count
     if (localStorage.getItem('currentUser') === null) {
       return 'you win!!!'
     }
@@ -146,6 +158,8 @@ window.onload = () => {
     let user = JSON.parse(localStorage.getItem(username));
     user.winCount += 1;
     localStorage.setItem(username, JSON.stringify(user));
+
+
     return 'you win!!!'
   }
 };

@@ -153,6 +153,7 @@ function signin() {
 
                 //store in the key 'currentuser' the username of the user that is courently log in 
                 localStorage.setItem('currentUser', user.username);
+                //document.cookie ='currentUser=ilan';
                 window.location.href = '../index.html'
                 return;
             }
