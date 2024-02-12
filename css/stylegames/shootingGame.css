@@ -34,7 +34,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url('../images/space.gif');
+    background-image: url('../../images/space.gif');
     background-size: cover;
     box-shadow: 0 0 10px white;
     border-radius: 6px;
@@ -107,10 +107,18 @@ button{
 }
 
 .modal-content h2 {
-    color: black; 
-    font-size: 36px; 
+    color: white; 
+    font-size: 36px;
+    background-color:inherit ; 
 }
 .modal-content p{
-    color: black;
+    color: white;
     font-size: 18px;
+    background-color:inherit ;
+}
+.lose{
+    background-color: rgb(230, 76, 76);
+}
+.win{
+    background-color: green;
 }

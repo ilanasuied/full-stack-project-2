@@ -113,6 +113,14 @@ button{
 h2, p{
     background-color:inherit ;
 }
+
+.lose{
+    background-color: rgb(230, 76, 76);
+}
+.win{
+    background-color: green;
+}
+
 .exit_img{
     height: 15px;
     width: 15px;
@@ -121,10 +129,4 @@ h2, p{
 .exit_btn{
     margin-top: 50px;
     
-}
-.lose{
-    background-color: rgb(230, 76, 76);
-}
-.win{
-    background-color: green;
 }

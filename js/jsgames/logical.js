@@ -127,7 +127,7 @@ window.onload = () => {
       modal.style.display = "none";
       let modal_content = document.querySelector(".modal-content");
       modal_content.classList.remove('lose');
-      modal_content.classList.remove('win')
+      modal_content.classList.remove('win');
     }, 2000)
 
   }
@@ -150,7 +150,6 @@ window.onload = () => {
       localStorage.setItem('wins', winsString);
     }
     let wins = parseInt(localStorage.getItem('wins'));
-    console.log(wins);
     wins++;
     localStorage.setItem('wins', wins.toString());
 
