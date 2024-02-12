@@ -4,37 +4,37 @@ window.onload = () => {
   var levelChosen = 8;//משתנה לקביעת מספר הקלפים במשחק
   createDivs();
   dropAndDrag();
+  //נאפשר גרירה ונוסיף עיצוב
   function dropAndDrag() {
-    const divs = document.querySelectorAll(".box"); //selection de toutes les divs avec la classe draggable
-    let dragged; //servira à stocker la div dragged
+    const divs = document.querySelectorAll(".box"); // שמירת כל ה הדיבים שיש להם את המחלקה בוקס במערך
+    let dragged;
     for (let div of divs) {
-      div.ondragstart = (e) => {
-        dragged = div;                   //copie la reference de la div qui sera dragged
-        div.classList.add("dragged");   //ajout de la classe dragged
-        e.dataTransfer.setData('text/plain', div.innerHTML); //option du drag permettant de sauvegarder le contenu du dragged
+      div.ondragstart = (e) => {//ברגע שמתחילים עם הגרירה 
+        dragged = div;                   //נשווה ביי רפרנס
+        div.classList.add("dragged");   
+        e.dataTransfer.setData('text/plain', div.innerHTML); //שומר את כל הנתונים של הנגרר 
       };
 
-      //Applique un effet CSS à l'entrée d'une zone de drop
+      //נוסיף עיצוב למקום שנגרור אליו 
       div.ondragenter = () => {
-        if (!div.classList.contains("dragged")) //si ce n'est pas l'element dragged
-          div.classList.add('dropHover');    //applique la classe dropHover
-        div.classList.remove('shake');        //Supprime la classe shake si présente
+        if (!div.classList.contains("dragged")) //אם זה לא האלמנט שנגרר
+          div.classList.add('dropHover');    
+        div.classList.remove('shake');        //מסיר את הרטט 
       };
-      //Applique un effet CSS à l'a sortie d'une zone de drop
-      div.ondragleave = () => div.classList.remove('dropHover'); //supprime la classe dropHover
+    
+      div.ondragleave = () => div.classList.remove('dropHover'); 
 
-      //Applique à un effet à la div qui a subit le drag d'origine
-      div.ondragend = () => div.classList.remove("dragged");  //supprime la classe dragged
+      div.ondragend = () => div.classList.remove("dragged");  
 
-      //Permet à la div d'etre une zone de drop (interdit par defaut)
+      //הרשאה לדיב שיגררו אליו
       div.ondragover = (e) => e.preventDefault();
 
-      //Copie la div dragged à la zone du drop et applique un effet CSS dessus
+      //מעתיק את הנתונים של הנגרר לתוך הדיב הנבחר ומעתיק את העיצוב
       div.ondrop = (e) => {
-        dragged.innerHTML = div.innerHTML;                   //le dragged prend la valeur du drop
-        div.innerHTML = e.dataTransfer.getData('text/plain'); //le drop prend la valeur du dragged
-        div.classList.remove('dropHover');               //supprime la classe dropHover
-        div.classList.add("shake");                     //ajout de l'effet shake sur le drop
+        dragged.innerHTML = div.innerHTML;                   //הנגרר מחליף תוכן עם המקום שאליו נכנס
+        div.innerHTML = e.dataTransfer.getData('text/plain'); //המקום שאליו נכנס לוקח את התוכן של הנגרר
+        div.classList.remove('dropHover');               
+        div.classList.add("shake");                     
       };
     }
   }
@@ -125,18 +125,22 @@ window.onload = () => {
     //disappear the message after 2 seconds
     setInterval(function () {
       modal.style.display = "none";
-
+      let modal_content = document.querySelector(".modal-content");
+      modal_content.classList.remove('lose');
+      modal_content.classList.remove('win')
     }, 2000)
 
   }
 
   function checkStatus() {
     var container = document.getElementById("container");
+    let modal_content  = document.querySelector(".modal-content");
     //keep all the boxs on an array
     var boxes = Array.from(container.querySelectorAll(".box"));
     for (let i = 0; i < boxes.length; i++) {
       if (parseFloat(boxes[i].textContent) !== i + 1) {
-        return 'you lose'
+        modal_content.classList.add("lose");
+        return 'you lose' 
       }
     }
     //update the amount of total wins
@@ -152,6 +156,7 @@ window.onload = () => {
 
     //if there is a user connected, update his wins count
     if (localStorage.getItem('currentUser') === null) {
+      modal_content.classList.add("win");
       return 'you win!!!'
     }
     let username = localStorage.getItem('currentUser');

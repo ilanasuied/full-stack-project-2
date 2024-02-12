@@ -103,15 +103,15 @@ button{
 }
 
 .modal-content h2 {
-    color: black; 
+    color: white; 
     font-size: 36px; 
 }
 .modal-content p{
-    color: black;
+    color: white;
     font-size: 18px;
 }
 h2, p{
-    background-color: #fff;
+    background-color:inherit ;
 }
 .exit_img{
     height: 15px;
@@ -121,4 +121,10 @@ h2, p{
 .exit_btn{
     margin-top: 50px;
     
+}
+.lose{
+    background-color: rgb(230, 76, 76);
+}
+.win{
+    background-color: green;
 }
