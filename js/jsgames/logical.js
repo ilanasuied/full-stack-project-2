@@ -1,7 +1,7 @@
 window.onload = () => {
   "use strict";
 
-  var levelChosen = 8;
+  var levelChosen = 8;//משתנה לקביעת מספר הקלפים במשחק
   createDivs();
   dropAndDrag();
   function dropAndDrag() {
@@ -108,7 +108,7 @@ window.onload = () => {
     for (let i = 0; i < levelChosen; i++) {
       let div = document.createElement('div');
       div.classList.add('box');
-      div.setAttribute('draggable', 'true');
+      div.setAttribute('draggable', 'true');//מאפשר גרירה
       div.innerHTML = i + 1;
       document.getElementById('container').appendChild(div);
     }

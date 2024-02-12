@@ -37,6 +37,13 @@ document.getElementById("first_game").addEventListener("mouseout", function(){
     mouseoutImage('first_game', "./images/first game.png" );
 });
 
+document.getElementById("cubes").addEventListener("mouseover", function(){
+    mouseoverImage('cubes', './images/game if.gif');
+});
+document.getElementById("cubes").addEventListener("mouseout", function(){
+    mouseoutImage('cubes', './images/game.png');
+});
+
 document.getElementById("second_game").addEventListener("mouseover", function(){
     mouseoverImage('second_game', './images/giphy (3).gif');
 });

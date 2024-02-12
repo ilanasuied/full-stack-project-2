@@ -15,7 +15,6 @@ let score = JSON.parse(localStorage.getItem('score')) || {
       };
   }
   */
-//מקבל את אלמנט הפסקה ושמנה לו את התוכן לזה
 updateScoreElement();
 
 function playGame(playerMove) {
@@ -66,12 +65,13 @@ function playGame(playerMove) {
     document.querySelector('.js-result').innerHTML = result;
 
     document.querySelector('.js-moves').innerHTML = `You
-    <img src="../images/${playerMove}-emoji.png" class="img-icon">
-    <img src="../images/${computerMove}-emoji.png" class="img-icon">
+    <img src="../../images/${playerMove}-emoji.png" class="img-icon">
+    <img src="../../images/${computerMove}-emoji.png" class="img-icon">
     Computer`;
 }
 
 function updateScoreElement() {
+    
 
     document.querySelector('.js-score')
         .innerHTML = `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
@@ -95,3 +95,6 @@ function pickComputerMove() {//פונקציה לבחירת מהלך המחשב
     }
     return computerMove;//מסיים את הפונקציה מיידית
 }
+
+
+    

@@ -17,7 +17,7 @@ btn.onclick = function(){
         //create the target
         let target = document.createElement('img');
         target.id="target";
-        target.src="../images/silly.png";
+        target.src="../../images/silly.png";
         //insert our the target in the container
         container.appendChild(target);
 

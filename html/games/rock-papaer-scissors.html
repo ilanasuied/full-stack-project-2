@@ -2,31 +2,31 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="../css/rock-paper-scissor.css">
-    <title>Rock Paper Scissors</title>
+  <link rel="stylesheet" href="../../css/stylegames/rock-paper-scissor.css">
+  <title>Rock Paper Scissors</title>
 </head>
 
 <body>
+  <div class="container">
     <!--כותרת למשחק שלנו-->
-    <div class="container">
-      <p class="title">Rock Paper Scissors</p>
+    <p class="title">Rock Paper Scissors</p>
     <!-- כפתורים ליצרית מהלכי המחשב-->
     <button onclick="
       playGame('rock');
     " class="move-button">
-        <img src="../images/rock-emoji.png" class="img-icon">
+      <img src="../../images/rock-emoji.png" class="img-icon">
     </button><!--יצרנו משתנה שבכל לחיצה על הכפתור מביא לנו מספר רנדומלי בין 0 ל-1 כעת נצרך להמיר אותו למהלך של המשחק שזה אבן נייר ומספריים נחלק כל חלק בין 0 ל-1 לשליש ואז נקבע מה כל חלק יהיה כלומר איזה מהלך וכך המרנואת המספרים למהלכים  -->
 
     <button onclick="
       playGame('paper');
     " class="move-button">
-        <img src="../images/paper-emoji.png" class="img-icon">
+      <img src="../../images/paper-emoji.png" class="img-icon">
     </button>
 
     <button onclick="
       playGame('scissors');
     " class="move-button">
-        <img src="../images/scissors-emoji.png" class="img-icon">
+      <img src="../../images/scissors-emoji.png" class="img-icon">
     </button>
 
     <p class="js-result result"></p>
@@ -44,8 +44,9 @@
 
 
 
-    </div>
-    
+  </div>
+
 </body>
-<script src="../js/rock-paper-scissors.js"></script>
+<script src="../../js/jsgames/rock-paper-scissors.js"></script>
+
 </html>
